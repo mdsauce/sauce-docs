@@ -811,6 +811,7 @@ module.exports = {
         'visual/css-animations',
         'visual/acct-team-mgmt',
         'visual/notifications',
+        'visual/faq',
         ],
         "Reference": [
             'dev/glossary',

@@ -325,6 +325,9 @@ module.exports = {
             ],
         },
     ],
+    backtrace: [
+       'backtrace/backtrace-test',
+    ],
     dev: [
         'dev',
         {

@@ -54,28 +54,28 @@ If successful, you'll see a confirmation response like the one below, indicating
 
    ```bash
 
-                       ,,                    
-                      .;,                    
-                 ..,,::i:,,..                
-              .:;i1111111111ii;,             
-            .;11tttffLLLLLLLfft1i,           
-            ;1tfffLLCCCCCCCCCCCL1i           
-           ,i1ffLLCCCCCCCCCCCLLCti;          
-           :i1fLCCCCCCCCCCCCCCCCti;          
-            ;1tLLLCCCCCCCCCCCLLf1i   :;      
+                       ,,
+                      .;,
+                 ..,,::i:,,..
+              .:;i1111111111ii;,
+            .;11tttffLLLLLLLfft1i,
+            ;1tfffLLCCCCCCCCCCCL1i
+           ,i1ffLLCCCCCCCCCCCLLCti;
+           :i1fLCCCCCCCCCCCCCCCCti;
+            ;1tLLLCCCCCCCCCCCLLf1i   :;
             .:;i11ttttttttttt11i;,  ,1.   ;:
                 ..,::;iii::,,..     .;;,,;i,
-                .,:;;iiii;;:,.       ;1;:,   
-              :i1111tfLCft1111i:. .:ii,      
-            ,i111i1CG80GC80ti111iii;,        
-          ,i1ii11if00GGGC0GGi11i1:.          
-        .i1:.;1i1it08GC0080Li11i1.           
-      .,1i.  i1111itCLG0GCfi11111.           
-    :;:;i;   :iii11iii111ii111ii;.           
-    .    1:    .i1i11,  .i1ii1:.             
-        :i.    ,1iii1:  ,1iii1;              
-        .      :11111:  ,i1111;              
-                .,,,.    .,,,.               
+                .,:;;iiii;;:,.       ;1;:,
+              :i1111tfLCft1111i:. .:ii,
+            ,i111i1CG80GC80ti111iii;,
+          ,i1ii11if00GGGC0GGi11i1:.
+        .i1:.;1i1it08GC0080Li11i1.
+      .,1i.  i1111itCLG0GCfi11111.
+    :;:;i;   :iii11iii111ii111ii;.
+    .    1:    .i1i11,  .i1ii1:.
+        :i.    ,1iii1:  ,1iii1;
+        .      :11111:  ,i1111;
+                .,,,.    .,,,.
 
 
    Sauce Connect Proxy™ opens a secure connection between Sauce Labs and a locally hosted application.
@@ -254,7 +254,7 @@ You can also launch Ephemeral tunnels from a continuous integration (CI) build s
 
 2. Determine the number of tunnels you'll need for your tests. For this example, we'll use one tunnel. As a rule of thumb, if you're running less than 200 parallel tests, one tunnel is fine; for 200 or more parallel tests, you'll need two tunnels. For more information, see [System and Network Requirements](/secure-connections/sauce-connect/system-requirements).
 
-3. How you start your tunnel is up to you. You can run a simple Bash shell script (or PowerShell script, if you're in Windows) that simply executes the start commands as if you were starting it locally:  
+3. How you start your tunnel is up to you. You can run a simple Bash shell script (or PowerShell script, if you're in Windows) that simply executes the start commands as if you were starting it locally:
   ```bash
   ./sc -u $SAUCE_USERNAME -k $SAUCE_ACCESS_KEY -r eu-central --tunnel-identifier $TUNNEL_IDENTIFIER
   ```
@@ -518,7 +518,7 @@ ReloadPropagatedFrom=sc.service
   ExecStart = /usr/local/bin/sc \
                 --logfile - \
                 --pidfile "/tmp/sauceconnect_%i.pid" \
-                --region us-west \
+                --region us-west-1 \
                 --se-port "%i" \
                 --tunnel-pool
   # Not needed with systemd

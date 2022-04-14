@@ -15,7 +15,7 @@ Keep in mind that these are guidelines. Most environments have their own workloa
 ## What You'll Need
 
 * Minimum 2 core x 8 GB Machine.
-* For Sauce Connect Proxy compatibility with macOS Catalina 10.15+, enable your Mac to allow apps from the App Store and identified developers.  
+* For Sauce Connect Proxy compatibility with macOS Catalina 10.15+, enable your Mac to allow apps from the App Store and identified developers.
     1. Go to **System Preferences** > **Security & Privacy** > **General**.
     2. Under the header **Allow apps downloaded from**, select the option **App Store and identified developers**.
 * We strongly recommend using the [cURL command line](https://curl.haxx.se/download.html) or an equivalent tool to ensure that any error messages you receive are precise and actionable. If you're not familiar with the tool, [review their docs here](https://curl.se/docs) and then install cURL on your local machine.
@@ -31,9 +31,9 @@ As an important step prior to downloading Sauce Connect Proxy, you or your syste
 
 3. Use cURL (or equivalent tool) to reach the below URLs, as needed. For example:
    * [https://saucelabs.com](https://saucelabs.com/)
-   * [https://api.us-west-1.saucelabs.com/rest/v1](https://api.us-west-1.saucelabs.com/rest/v1) for US-WEST region
+   * [https://api.us-west-1.saucelabs.com/rest/v1](https://api.us-west-1.saucelabs.com/rest/v1) for US-WEST-1 region
    * [https://us-east-1.saucelabs.com/rest/v1](https://us-east-1.saucelabs.com/rest/v1) for US-EAST region
-   * [https://eu-central-1.saucelabs.com](https://eu-central-1.saucelabs.com/) for EU-CENTRAL region
+   * [https://eu-central-1.saucelabs.com](https://eu-central-1.saucelabs.com/) for EU-CENTRAL-1 region
 
    If you can get a `200 OK` response from all URLs above, you are ready to start Sauce Connect!
    As an alternative, you can just try to [start a tunnel](/secure-connections/sauce-connect/setup-configuration/basic-setup/#validating-your-basic-setup)
@@ -645,7 +645,7 @@ Tips for optimizing your tests running through Sauce Connect tunnels:
 
 Sauce Connect Proxy must be set up on the same network as your test devices. It does not, however, need to be set up on the same machine as the website or app you're testing.
 
-[What Not to Do: Common Mistakes in Sauce Connect Proxy Network Configurations](/secure-connections/sauce-connect/troubleshooting) illustrates some examples of network architectures in which Sauce Connect will not be able to create a tunnel or will be too slow to carry out effective testing.  
+[What Not to Do: Common Mistakes in Sauce Connect Proxy Network Configurations](/secure-connections/sauce-connect/troubleshooting) illustrates some examples of network architectures in which Sauce Connect will not be able to create a tunnel or will be too slow to carry out effective testing.
 
 
 ## Configuring Your Network to Use Sauce Connect

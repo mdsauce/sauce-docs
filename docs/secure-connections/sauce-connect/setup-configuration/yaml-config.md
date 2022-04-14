@@ -17,7 +17,7 @@ Config file may contain any Sauce Connect Proxy CLI flag. It may also contain co
 
 ```yaml
 ---
-region: "us-west"
+region: "us-west-1"
 user: "janedoe-sauce"
 api-key: "xxxx-xxx-xxx"
 # this is my log file for SC I use for Mac OS tests.
@@ -56,7 +56,7 @@ proxy: ""
 proxy-tunnel: false
 proxy-userpwd: ""
 readyfile: ""
-region: "us-west"
+region: "us-west-1"
 rest-url: ""
 scproxy-port: 0
 se-port: 0

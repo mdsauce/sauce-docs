@@ -86,7 +86,7 @@ Follow the steps below to configure Sauce Connect Proxy using environment variab
   ```
 2. Starting a new Sauce Connect Proxy will not require adding `--api-key` or `--user` flags.
   ```bash
-  sc --region us-west
+  sc --region us-west-1
   ```
 
 Alternatively, Sauce Connect Proxy environment variables may be added to one of the user environment configuration files, such as `~/.bash_profile`.
@@ -101,7 +101,7 @@ Alternatively, Sauce Connect Proxy environment variables may be added to one of 
 4. Confirm that your environment variables have been set by typing `echo $SAUCE_USERNAME` in your terminal. The response should be your username value.
 5. Just as above, starting a new Sauce Connect Proxy will not require adding `--api-key` or `--user` flags.
  ```bash
- sc --region us-west
+ sc --region us-west-1
  ```
 
 </TabItem>
@@ -115,7 +115,7 @@ Alternatively, Sauce Connect Proxy environment variables may be added to one of 
 6. Confirm that your environment variables have been set by typing `echo %SAUCE_USERNAME%` in your terminal. The response should be your username value. Then do the same for your access key.
 7. Starting a new Sauce Connect Proxy will not require adding `--api-key` or `--user` flags.
  ```bash
- sc --region us-west
+ sc --region us-west-1
  ```
 
 </TabItem>

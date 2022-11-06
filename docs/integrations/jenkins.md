@@ -10,30 +10,21 @@ import TabItem from '@theme/TabItem';
 
 The OnDemand plugin allows you to easily manage your Sauce Labs testing from [Jenkins](https://jenkins-ci.org/), one of the most popular continuous integration platforms used in software development.
 
-## What You'll Learn
-
-* How to install and configure the Sauce OnDemand Plugin for Jenkins
-* How to configure Sauce Connect to enable testing on private networks
-* How to run parallel tests in Jenkins
-* How to set up reporting between Sauce Labs & Jenkins
-* How to implement the OnDemand plugin into your Jenkins pipeline
-
 ## What You'll Need
 
 * A Sauce Labs account ([Log in](https://accounts.saucelabs.com/am/XUI/#login/) or sign up for a [free trial license](https://saucelabs.com/sign-up))
 * Your Sauce Labs [Username and Access Key](https://app.saucelabs.com/user-settings)
-* Allow access to the following from your Jenkins server:
-    - IP ranges located [here](https://docs.saucelabs.com/basics/data-center-endpoints/)
+* Access to the following from your Jenkins server:
+    - IP ranges listed in [Data Center Endpoints](https://docs.saucelabs.com/basics/data-center-endpoints/)
     - `saucelabs.com`
     - `ondemand.saucelabs.com`
-
 
 ## Installing the OnDemand Plugin
 
 Install the Sauce OnDemand plugin from your Jenkins Administration page.
 
-1. From your Jenkins Dashboard, select **Manage Jenkins**, then **Manage Plugins**.
-1. Select the **Available** tab and choose **Sauce OnDemand Plugin** from the list.
+1. From your Jenkins Dashboard, click **Manage Jenkins** and then click **Manage Plugins**.
+1. On the **Available** tab, select **Sauce OnDemand Plugin** from the list.
 1. Click **Download now and install after restart**.
 1. In the plugin installation process window, select the **Restart Jenkins when installation is complete and no jobs are running** checkbox.
 
@@ -78,11 +69,11 @@ stage('Test') {
 }
 ```
 
-## Configuring Sauce Labs and Sauce Connect Settings in Jenkins
+## Configuring Sauce Labs and Sauce Connect Proxy Settings in Jenkins
 
-You can manage many of the plugin settings from within the Jenkins dashboard to ensure your tests run according to your needs. The plugin is bundled with the latest version of Sauce Connect. When you enable it, you can run your Sauce Labs tests in environments that are not publicly accessible, like your local network or behind a firewall.
+You can manage many of the plugin settings from within the Jenkins dashboard to ensure your tests run according to your needs. The plugin is bundled with the latest version of Sauce Connect Proxy. When you enable it, you can run your Sauce Labs tests in environments that are not publicly accessible, like your local network or behind a firewall.
 
- Some plugin options are set globally for all your Jenkins projects and some options are specific to individual projects.
+Some plugin options are set globally for all your Jenkins projects and some options are specific to individual projects.
 
 :::note
 When options can be set at both levels, project settings override global settings.
@@ -105,7 +96,7 @@ When options can be set at both levels, project settings override global setting
       </tr>
       <tr>
         <td><b>Override Sauce Connect Path</b></td>
-        <td>Specify a local path into which the Sauce Connect binary compatible with your operating system will be extracted. This value will override the default <code>$home</code> directory.<br/> <b>NOTE:</b> Always run Sauce Connect on the same network as the site or app under test, but the same machine is not required.</td>
+        <td>Specify a local path into which the Sauce Connect Proxy binary compatible with your operating system will be extracted. This value will override the default <code>$home</code> directory.<br/> <b>NOTE:</b> Always run Sauce Connect Proxy on the same network as the site or app under test, but the same machine is not required.</td>
       </tr>
       <tr>
         <td><b>Sauce Connect Options</b></td>
@@ -115,11 +106,11 @@ When options can be set at both levels, project settings override global setting
       </tr>
       <tr>
         <td><b>Sauce Connect Max Retries</b></td>
-        <td>Maximum number of times Jenkins should attempt to launch a Sauce Connect tunnel before retuning a failure.</td>
+        <td>Maximum number of times Jenkins should attempt to launch a Sauce Connect Proxy tunnel before retuning a failure.</td>
       </tr>
       <tr>
         <td><b>Sauce Connect Retry Wait Time in Seconds</b></td>
-        <td>The amount of time Jenkins should wait before retrying a failed Sauce Connect launch attempt.</td>
+        <td>The amount of time Jenkins should wait before retrying a failed Sauce Connect Proxy launch attempt.</td>
       </tr>
       <tr>
         <td><b>Selenium Environment Variable Prefix</b></td>
@@ -130,7 +121,7 @@ When options can be set at both levels, project settings override global setting
   <li>Click <b>Save</b></li>
 </ol>
 
-### Configure Sauce Settings for a Project
+### Configure Sauce Labs Settings for a Project
 
 <ol>
   <li>From your Jenkins dashboard, select the project you wish to configure.</li>
@@ -145,7 +136,7 @@ When options can be set at both levels, project settings override global setting
       </tr>
       <tr>
         <td><b>Enable Sauce Connect</b></td>
-        <td>Launches a new Sauce Connect tunnel whenever Jenkins starts a build for this project and sets environment variables for <code>SELENIUM_HOST</code> and <code>SELENIUM_PORT</code> to <code>localhost:4445</code>.</td>
+        <td>Launches a new Sauce Connect Proxy tunnel whenever Jenkins starts a build for this project and sets environment variables for <code>SELENIUM_HOST</code> and <code>SELENIUM_PORT</code> to <code>localhost:4445</code>.</td>
       </tr>
       <tr>
         <td><b>Credentials</b></td>
@@ -167,11 +158,11 @@ When options can be set at both levels, project settings override global setting
       </tr>
       <tr>
         <td><b>Appium</b></td>
-        <td>This setting is the same as the <b>WebDriver</b> setting, but it is appplicable for use with a mobile browser automation tool.</td>
+        <td>This setting is the same as the <b>WebDriver</b> setting, but it is applicable for use with a mobile browser automation tool.</td>
       </tr>
       <tr>
         <td><b>Native App Package Path</b></td>
-        <td>If the project is testing a native app, this is the directory location of the app package. This value will populate the <code>SAUCE_NATIVE_APP</code> environment variable for all Sauce tests in this project.</td>
+        <td>If the project is testing a native app, this is the directory location of the app package. This value will populate the <code>SAUCE_NATIVE_APP</code> environment variable for all Sauce Labs tests in this project.</td>
       </tr>
       <tr>
         <td><b>Use latest version of selected browsers</b></td>
@@ -179,7 +170,7 @@ When options can be set at both levels, project settings override global setting
       </tr>
       <tr>
         <td><b>Use latest version of Sauce Connect</b></td>
-        <td>Automatically check for and use the latest version of Sauce Connect when launching a new tunnel for this project.<br/><b>We recommend enabling this option</b> because Sauce Connect releases are independent from plugin releases, so the Sauce Connect version bundled in the plugin may become out of date sooner than the plugin itself.</td>
+        <td>Automatically check for and use the latest version of Sauce Connect Proxy when launching a new tunnel for this project.<br/><b>We recommend enabling this option</b> because Sauce Connect Proxy releases are independent from plugin releases, so the Sauce Connect Proxy version bundled in the plugin may become out of date sooner than the plugin itself.</td>
       </tr>
       <tr>
         <td><b>Clean up jobs and uniquely generated tunnels instead of waiting for timeouts</b></td>
@@ -199,19 +190,19 @@ When options can be set at both levels, project settings override global setting
       </tr>
       <tr>
         <td><b>Enable Verbose Logging</b></td>
-        <td>Include Sauce Connect output in the Jenkins console output for each job.</td>
+        <td>Include Sauce Connect Proxy output in the Jenkins console output for each job.</td>
       </tr>
       <tr>
         <td><b>Launch Sauce Connect On Node</b></td>
-        <td>Launch Sauce Connect on a Node instead of the Server.</td>
+        <td>Launch Sauce Connect Proxy on a Node instead of the Server.</td>
       </tr>
       <tr>
         <td><b>Sauce Host</b></td>
-        <td> If you have a dedicated Sauce Connect instance running elsewhere, you can set the host here and override the default <code>SELENIUM_HOST</code> value (<code>localhost</code> when Sauce Connect is enabled or <code>ondemand.saucelabs.com</code> if Sauce Connect is not enabled).</td>
+        <td> If you have a dedicated Sauce Connect Proxy instance running elsewhere, you can set the host here and override the default <code>SELENIUM_HOST</code> value (<code>localhost</code> when Sauce Connect Proxy is enabled or <code>ondemand.saucelabs.com</code> if Sauce Connect Proxy is not enabled).</td>
       </tr>
       <tr>
         <td><b>Sauce Port</b></td>
-        <td>If you have a dedicated Sauce Connect instance running elsewhere, you can set the port here and override the default <code>SELENIUM_PORT</code> value (<code>4445</code> when Sauce Connect is enabled or <code>4444</code> if Sauce Connect is not enabled).</td>
+        <td>If you have a dedicated Sauce Connect Proxy instance running elsewhere, you can set the port here and override the default <code>SELENIUM_PORT</code> value (<code>4445</code> when Sauce Connect Proxy is enabled or <code>4444</code> if Sauce Connect is not enabled).</td>
       </tr>
       <tr>
         <td><b>Sauce Connect Options</b></td>
@@ -220,12 +211,12 @@ When options can be set at both levels, project settings override global setting
         </td>
       </tr>
       <tr>
-        <td><b>Create a new unique Sauce Connect tunnel per build</b></td>
+        <td><b>Create a new unique Sauce Connect Proxy tunnel per build</b></td>
         <td>Generates a unique tunnel identifier for each build in this project and populates a <code>TUNNEL_IDENTIFIER</code> environment variable. You must then reference this variable in the capabilities for your tests.</td>
       </tr>
       <tr>
         <td><b>Sauce Connect Binary Location</b></td>
-        <td>A local path that will be the Sauce Connect binary extraction directory for this project. This value will override the default directory and the global setting.<br/> <b>NOTE:</b> Always run Sauce Connect on the same network as the site or app under test, but the same machine is not required.</td>
+        <td>A local path that will be the Sauce Connect Proxy binary extraction directory for this project. This value will override the default directory and the global setting.<br/> <b>NOTE:</b> Always run Sauce Connect Proxy on the same network as the site or app under test, but the same machine is not required.</td>
       </tr>
       <tr>
         <td><b>Set GitHub commit status with custom context and message</b></td>
@@ -245,12 +236,12 @@ Sauce Labs tests use capabilities settings to specify the environment on which a
 
 ### Environment Variables
 
-The following environment variables are relevant for Sauce Labs tests running in Jenkins and can be used to populate your test capabilities. Most of the environment variables defined here are automatically generated based on your project configurations for the plugin and Sauce Connect.
+The following environment variables are relevant for Sauce Labs tests running in Jenkins and can be used to populate your test capabilities. Most of the environment variables defined here are automatically generated based on your project configurations for the plugin and Sauce Connect Proxy.
 
 |Variable|Description|Usage|
 |---|---|---|
-|`SELENIUM_HOST`|Identifies the Selenium server host.|Configured by the **Sauce Host** project setting. When not set, defaults to `localhost` if Sauce Connect is enabled or `ondemand.saucelabs.com` if Sauce Connect is not enabled.|
-|`SELENIUM_PORT`|	Identifies the Selenium server port.|Configured by the **Sauce Port** project setting. When not set, defaults to `4445` if Sauce Connect is enabled or `4444` if Sauce Connect is not enabled.
+|`SELENIUM_HOST`|Identifies the Selenium server host.|Configured by the **Sauce Host** project setting. When not set, defaults to `localhost` if Sauce Connect Proxy is enabled or `ondemand.saucelabs.com` if Sauce Connect Proxy is not enabled.|
+|`SELENIUM_PORT`|	Identifies the Selenium server port.|Configured by the **Sauce Port** project setting. When not set, defaults to `4445` if Sauce Connect Proxy is enabled or `4444` if Sauce Connect Proxy is not enabled.
 |`SELENIUM_PLATFORM`|The operating system on which the browser being tested is installed.|Populated by the **WebDriver** or **Appium** operating system combination specified during project configuration.|
 |`SELENIUM_VERSION`|	The version number of the browser being tested.|Populated by the **WebDriver** or **Appium** operating system combination specified during project configuration or dynamically if the **Use latest version of selected browsers** option is enabled.|
 |`SELENIUM_BROWSER`|The name of the browser being tested.|Populated by the **WebDriver** or **Appium** operating system combination specified during project configuration.|
@@ -262,7 +253,7 @@ The following environment variables are relevant for Sauce Labs tests running in
 |`SAUCE_ACCESS_KEY`|The access key of the Sauce Labs account on which tests in this project are run.|Populated by the `Access Key` value of the authentication credential associated with the project.|
 |`SELENIUM_STARTING_URL`|The value of the Starting URL field.|This value is not populated by any configuration setting.|
 |`SAUCE_ONDEMAND_BROWSERS`|A JSON-formatted string containing a set of attributes for multiple operating system and browser combinations.|Populated when you select more than one **WebDriver** or **Appium** value during project configuration.|
-|`TUNNEL_IDENTIFIER`|The unique tunnel identifier used when Sauce Connect is launched.| Populated when the **Create a new unique Sauce Connect tunnel per build** option is selected during project configuration.|
+|`TUNNEL_IDENTIFIER`|The unique tunnel identifier used when Sauce Connect Proxy is launched.| Populated when the **Create a new unique Sauce Connect tunnel per build** option is selected during project configuration.|
 |`JENKINS_BUILD_NUMBER`|The ID of the build the Sauce OnDemand plugin will use when showing results that are not in the logs.|Populated when the `buildName` capability is set for the test.|
 |`SAUCE_BUILD_NAME`|The name of the build the Sauce OnDemand plugin will use when showing test results.|The plugin automatically populates this this value at run-time with `${JOB_NAME}_${BUILD_NUMBER}`.|
 
@@ -371,9 +362,9 @@ The `{sauce}` block lets you pass your Sauce Labs username and access key as env
 1. Select **sauce: Sauce** and **Generate Groovy**.
 1. Add the returned snippet to your Groovy script.
 
-### Creating the Sauce Connect Block Snippet
+### Creating the Sauce Connect Proxy Block Snippet
 
-The `{sauceconnect}` block lets you manage starting and stopping Sauce Connect. Wrap it with the `{sauce}` block so your authentication is included.
+The `{sauceconnect}` block lets you manage starting and stopping Sauce Connect Proxy. Wrap it with the `{sauce}` block so your authentication is included.
 
 1. Enable the **Snippet Generator** in Jenkins Pipeline.
 1. Select **sauce: Sauce Connect** and **Generate Groovy**.
